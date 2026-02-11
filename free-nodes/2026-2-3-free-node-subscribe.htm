@@ -416,9 +416,14 @@ VPN通过建立加密的“隧道”，将用户的网络流量传输到中转�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 是否支持自定义 DNS？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
     <div class="panel-body">
-        支持。Mellow 的配置文件中可设置 DNS 服务器地址及模式（如 DoH、DoT）。用户可使用安全 DNS，如 Cloudflare 1.1.1.1 或 Google DNS，以减少污染风险。<hr />    </div>
+        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
+    <div class="panel-body">
+        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 是否支持应用分流？</h5></div>
@@ -431,29 +436,9 @@ VPN通过建立加密的“隧道”，将用户的网络流量传输到中转�
         Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>当 V2Ray 报错 inbound 没有监听，可能是哪些配置问题？</h5></div>
     <div class="panel-body">
         检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
-    <div class="panel-body">
-        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray QUIC 传输适合什么网络环境？</h5></div>
-    <div class="panel-body">
-        QUIC 基于 UDP 支持多路复用和零握手，降低延迟，提高吞吐量。适合高丢包、不稳定网络环境，可保证视频、游戏和即时通讯流量的稳定性和流畅体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 支持节点手动导入和修改吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可以手动输入节点信息或通过扫描二维码导入节点，并进行修改或删除。虽然不支持自动订阅更新，但足以满足轻量级用户对节点管理和分流的需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何用 systemd 管理 V2Ray/ Sing-box 服务？</h5></div>
@@ -461,9 +446,24 @@ VPN通过建立加密的“隧道”，将用户的网络流量传输到中转�
         创建 systemd 单元文件，指定 ExecStart 指令并设置 Restart=on-failure 与合适的 User/Group。启用服务并使用 `systemctl enable` 与 `systemctl start` 管理，便于开机自启与日志集中收集。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
+    <div class="panel-heading"><h5>V2Ray QUIC 传输适合什么网络环境？</h5></div>
     <div class="panel-body">
-        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。    </div>
+        QUIC 基于 UDP 支持多路复用和零握手，降低延迟，提高吞吐量。适合高丢包、不稳定网络环境，可保证视频、游戏和即时通讯流量的稳定性和流畅体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 支持节点手动导入和修改吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可以手动输入节点信息或通过扫描二维码导入节点，并进行修改或删除。虽然不支持自动订阅更新，但足以满足轻量级用户对节点管理和分流的需求。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 是否支持自定义 DNS？</h5></div>
+    <div class="panel-body">
+        支持。Mellow 的配置文件中可设置 DNS 服务器地址及模式（如 DoH、DoT）。用户可使用安全 DNS，如 Cloudflare 1.1.1.1 或 Google DNS，以减少污染风险。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -492,16 +492,16 @@ VPN通过建立加密的“隧道”，将用户的网络流量传输到中转�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-189742.htm" title="Clash 100球拍穿线终极指南：解锁你的最佳击球表现">Clash 100球拍穿线终极指南：解锁你的最佳击球表现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-20-free-node-subscribe-links.htm" title="Karing 免费节点 | 1月20日18.5M/S|免费V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月20日18.5M/S|免费V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-8-vpn-node.htm" title="Karing 免费节点 | 2月8日21.6M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 2月8日21.6M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-19-vpn-free.htm" title="Karing 免费节点 | 1月19日22.2M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月19日22.2M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-1-vpn-node.htm" title="Karing 免费节点 | 2月1日20.6M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 2月1日20.6M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-7-share-vpn.htm" title="Karing 免费节点 | 2月7日22.8M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 2月7日22.8M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-29-vpn-github.htm" title="Karing 免费节点 | 1月29日18.8M/S|免费Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月29日18.8M/S|免费Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-15-share-vpn.htm" title="Karing 免费节点 | 1月15日21.4M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月15日21.4M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-31-vpn-node.htm" title="Karing 免费节点 | 1月31日20.4M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月31日20.4M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-3-free-node-subscribe.htm" title="Karing 免费节点 | 2月3日21.3M/S|免费V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 2月3日21.3M/S|免费V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-30-top-vpn-node.htm" title="Karing 免费节点 | 1月30日18.1M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月30日18.1M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-25-vpn-github.htm" title="Karing 免费节点 | 1月25日21.3M/S|免费Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月25日21.3M/S|免费Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-27-node-share.htm" title="Karing 免费节点 | 1月27日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月27日20.8M/S|免费Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-22-top-vpn-node.htm" title="Karing 免费节点 | 1月22日19.8M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月22日19.8M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/news/article-196238.htm" title="完全指南：如何选择最优Shadowrocket节点提升上网体验">完全指南：如何选择最优Shadowrocket节点提升上网体验</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-9-top-vpn.htm" title="Karing 免费节点 | 1月9日22.2M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月9日22.2M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/news/article-189336.htm" title="终极指南：一键搭建 V2Ray 并使用搬瓦工 VPS 提升网络自由度">终极指南：一键搭建 V2Ray 并使用搬瓦工 VPS 提升网络自由度</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-8-top-vpn-node.htm" title="Karing 免费节点 | 1月8日18.3M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 1月8日18.3M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/news/article-187724.htm" title="突破网络藩篱：2024年最经济高效的科学上网全攻略">突破网络藩篱：2024年最经济高效的科学上网全攻略</a></li>
                     </ul>
     </div>
 </div>
@@ -513,13 +513,10 @@ VPN通过建立加密的“隧道”，将用户的网络流量传输到中转�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
             </li>
                     </ul>
     </div>

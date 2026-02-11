@@ -1,4 +1,4 @@
-# Karing 免费节点 | 2月4日21.8M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点节点推荐，在线Clash机场梯子购买推荐  更新时间 2026-02-04 09:03:23
+# Karing 免费节点 | 2月11日23M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐  更新时间 2026-02-11 11:40:19
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://karingnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://karingnode.github.io/uploads/2026/02/0-20260204.yaml
-- https://karingnode.github.io/uploads/2026/02/1-20260204.yaml
-- https://karingnode.github.io/uploads/2026/02/2-20260204.yaml
-- https://karingnode.github.io/uploads/2026/02/3-20260204.yaml
-- https://karingnode.github.io/uploads/2026/02/4-20260204.yaml
+- https://karingnode.github.io/uploads/2026/02/0-20260211.yaml
+- https://karingnode.github.io/uploads/2026/02/1-20260211.yaml
+- https://karingnode.github.io/uploads/2026/02/2-20260211.yaml
+- https://karingnode.github.io/uploads/2026/02/3-20260211.yaml
+- https://karingnode.github.io/uploads/2026/02/4-20260211.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://karingnode.github.io/uploads/2026/02/0-20260204.txt
-- https://karingnode.github.io/uploads/2026/02/1-20260204.txt
-- https://karingnode.github.io/uploads/2026/02/2-20260204.txt
-- https://karingnode.github.io/uploads/2026/02/3-20260204.txt
-- https://karingnode.github.io/uploads/2026/02/4-20260204.txt
+- https://karingnode.github.io/uploads/2026/02/0-20260211.txt
+- https://karingnode.github.io/uploads/2026/02/1-20260211.txt
+- https://karingnode.github.io/uploads/2026/02/2-20260211.txt
+- https://karingnode.github.io/uploads/2026/02/3-20260211.txt
+- https://karingnode.github.io/uploads/2026/02/4-20260211.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://karingnode.github.io/uploads/2026/02/20260204.json
+- https://karingnode.github.io/uploads/2026/02/20260211.json
 
 ## 更多Clash节点订阅 ：
 
