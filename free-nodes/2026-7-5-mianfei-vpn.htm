@@ -343,14 +343,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的重写规则可实现哪些功能？</h5></div>
+    <div class="panel-body">
+        QuantumultX 的重写规则支持请求头修改、响应内容修改、广告屏蔽及自动跳转。结合脚本可实现自动签到、流量统计和定制化网络访问，极大增强客户端灵活性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否可导入节点二维码？</h5></div>
     <div class="panel-body">
         支持。用户可扫描节点二维码导入节点信息，也可手动输入节点参数。虽然不支持订阅自动更新，但对于轻量用户来说足够满足日常节点管理和流量分流需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的重写规则可实现哪些功能？</h5></div>
+    <div class="panel-heading"><h5>Trojan-go 与原版 Trojan 有什么不同？</h5></div>
     <div class="panel-body">
-        QuantumultX 的重写规则支持请求头修改、响应内容修改、广告屏蔽及自动跳转。结合脚本可实现自动签到、流量统计和定制化网络访问，极大增强客户端灵活性。<hr />    </div>
+        Trojan-go 在原版 Trojan 基础上扩展了多协议支持、WebSocket、gRPC、mux 多路复用等特性，同时优化性能并支持更丰富的客户端。相比原版，它更灵活，适合高级用户或多平台部署需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
@@ -358,14 +363,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Windows 上用 Wireshark 分析代理流量以排查问题？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
-        使用 Wireshark 抓取对应网卡流量，结合过滤器（例如 host <server_ip> 或 tcp.port==<port>）分析握手与数据包内容。注意 TLS/QUIC 流量为加密内容，仅能通过元信息（时延、丢包）判断异常，不要尝试解密用户隐私。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的 QUIC 协议如何降低延迟？</h5></div>
-    <div class="panel-body">
-        QUIC 协议基于 UDP，多路复用和拥塞控制优化，可减少握手延迟和包重传次数。Hysteria2 利用 QUIC 的特性，使高延迟或丢包网络下依然保持低延迟和高稳定性。<hr />    </div>
+        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否支持订阅更新？</h5></div>
@@ -373,9 +373,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 的 QUIC 协议如何降低延迟？</h5></div>
     <div class="panel-body">
-        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。<hr />    </div>
+        QUIC 协议基于 UDP，多路复用和拥塞控制优化，可减少握手延迟和包重传次数。Hysteria2 利用 QUIC 的特性，使高延迟或丢包网络下依然保持低延迟和高稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的证书配置需要注意哪些事项？</h5></div>
@@ -383,14 +383,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         TLS 证书必须有效且域名匹配，否则客户端无法建立连接。推荐使用受信任证书，并确保证书链完整，以保证节点安全和长期可用性，同时提升伪装效果。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
+    <div class="panel-heading"><h5>如何在 Windows 上用 Wireshark 分析代理流量以排查问题？</h5></div>
     <div class="panel-body">
-        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
+        使用 Wireshark 抓取对应网卡流量，结合过滤器（例如 host <server_ip> 或 tcp.port==<port>）分析握手与数据包内容。注意 TLS/QUIC 流量为加密内容，仅能通过元信息（时延、丢包）判断异常，不要尝试解密用户隐私。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-go 与原版 Trojan 有什么不同？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
     <div class="panel-body">
-        Trojan-go 在原版 Trojan 基础上扩展了多协议支持、WebSocket、gRPC、mux 多路复用等特性，同时优化性能并支持更丰富的客户端。相比原版，它更灵活，适合高级用户或多平台部署需求。    </div>
+        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -420,11 +420,11 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <div class="row">
             <div class="text-center">
-                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">
+                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">
                     <img src="/assets/website/img/G/xingchen.webp" class="avatar" alt="星辰机场">
                 </a>
                 <dl>
-                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></dt>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></dt>
                     <dd>
                         <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p>                    </dd>
                 </dl>
@@ -438,16 +438,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-11-top-vpn-node.htm" title="Karing 免费节点 | 5月11日19.7M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 5月11日19.7M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-16-node-share-links.htm" title="Karing 免费节点 | 5月16日18.7M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 5月16日18.7M/S|免费Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-29-node-share-links.htm" title="Karing 免费节点 | 6月29日18.8M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月29日18.8M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-3-vpn-proxy.htm" title="Karing 免费节点 | 6月3日18.6M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月3日18.6M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-15-top-vpn.htm" title="Karing 免费节点 | 6月15日20.2M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月15日20.2M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-19-free-vpn-node.htm" title="Karing 免费节点 | 5月19日19.5M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 5月19日19.5M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-27-free-vpn-node.htm" title="Karing 免费节点 | 5月27日20.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 5月27日20.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-18-free-vpn.htm" title="Karing 免费节点 | 5月18日20.2M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 5月18日20.2M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-2-vpn-node.htm" title="Karing 免费节点 | 7月2日22.5M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 7月2日22.5M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-1-mianfei-vpn.htm" title="Karing 免费节点 | 7月1日19.2M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 7月1日19.2M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-14-vpn-proxy.htm" title="Karing 免费节点 | 7月14日19.4M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 7月14日19.4M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-4-vpn-free.htm" title="Karing 免费节点 | 7月4日21.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 7月4日21.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-18-vpn-proxy.htm" title="Karing 免费节点 | 6月18日22.2M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月18日22.2M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-10-vpn-node.htm" title="Karing 免费节点 | 6月10日21.3M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月10日21.3M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-19-vpn-github.htm" title="Karing 免费节点 | 6月19日21.3M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月19日21.3M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-26-vpn-node.htm" title="Karing 免费节点 | 6月26日18.1M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月26日18.1M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-20-top-vpn-node.htm" title="Karing 免费节点 | 6月20日18.1M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月20日18.1M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-23-free-node-subscribe-links.htm" title="Karing 免费节点 | 6月23日18.6M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月23日18.6M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-27-vpn-github.htm" title="Karing 免费节点 | 6月27日22.2M/S|免费Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 6月27日22.2M/S|免费Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-8-top-vpn-node.htm" title="Karing 免费节点 | 7月8日19.5M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">Karing 免费节点 | 7月8日19.5M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -459,13 +459,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                     </ul>
     </div>
@@ -489,7 +486,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
                                 <p class="m-0">
                 Karing 免费节点订阅官网 版权所有 Powered by WordPress
             </p>
